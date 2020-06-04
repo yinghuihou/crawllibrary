@@ -1,14 +1,14 @@
 package com.demo.zhuaqudemo;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import com.abroad.crawllibrary.main.CrawlMainHandler;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                     String res = CrawlMainHandler.getDeviceInfo();
-                     Log.e("xxx", "电池：");
+                    String res = CrawlMainHandler.getDeviceInfo();
+                    Log.e("xxx", "电池：");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

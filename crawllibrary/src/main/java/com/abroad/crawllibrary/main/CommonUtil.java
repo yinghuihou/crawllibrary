@@ -3,9 +3,7 @@ package com.abroad.crawllibrary.main;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.text.TextUtils;
-
-import androidx.core.app.ActivityCompat;
-
+import android.support.v4.app.ActivityCompat;
 
 class CommonUtil {
 
