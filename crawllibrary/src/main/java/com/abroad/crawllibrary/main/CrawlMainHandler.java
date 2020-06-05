@@ -44,6 +44,26 @@ public class CrawlMainHandler {
         return gaidValue;
     }
 
+    //获取联系人信息
+    public static String getContactList() throws Exception {
+        if (mContext == null) {
+            throw new Exception("crawlHandler not be inited!");
+        }
+        return CommonUtil.getContactList().toString();
+    }
+
+    //获取APPList信息
+    public static String getAppList() throws Exception {
+        if (mContext == null) {
+            throw new Exception("crawlHandler not be inited!");
+        }
+        JSONArray appsJsonArray = DeviceUtils.getAppList(mContext);
+        if (appsJsonArray == null || appsJsonArray.length() <= 0) {
+            appsJsonArray = DeviceUtils.getAppList2(mContext);
+        }
+        return appsJsonArray.toString();
+    }
+
     //获取设备信息参数
     public static String getDeviceInfo() throws Exception {
         if (mContext == null) {
@@ -51,18 +71,12 @@ public class CrawlMainHandler {
         }
 
         JSONObject deviceInfo = new JSONObject();
-        JSONArray appsJsonArray = DeviceUtils.getAppList(mContext);
-        if (appsJsonArray == null || appsJsonArray.length() <= 0) {
-            appsJsonArray = DeviceUtils.getAppList2(mContext);
-        }
-
         try {
             deviceInfo.put("hardware", DeviceUtils.getHardWareInfo());
             deviceInfo.put("location", locationValue);
             deviceInfo.put("storage", FileSizeUtil.getStorageInfo());
             deviceInfo.put("general_data", DeviceUtils.getGeneralData());
             deviceInfo.put("other_data", DeviceUtils.getOtherData());
-            deviceInfo.put("application", appsJsonArray);
             deviceInfo.put("network", DeviceUtils.getNetworkData());
             deviceInfo.put("battery_status", DeviceUtils.getBatteryData());
             deviceInfo.put("audio_external", DeviceUtils.getAudioExternalNumber());

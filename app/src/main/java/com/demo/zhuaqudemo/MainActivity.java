@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
-import com.abroad.crawllibrary.main.CrawlMainHandler;
+import com.abroad.crawllibrary.main.CommonUtil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                     String res = CrawlMainHandler.getDeviceInfo();
-                     Log.e("xxx", "电池：");
+                     //String res = CommonUtil.getCommLocation().toString();
+                     //Log.e("xxx", "result--：" + res);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
