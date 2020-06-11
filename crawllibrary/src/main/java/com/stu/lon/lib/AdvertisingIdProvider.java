@@ -1,4 +1,4 @@
-package com.abroad.crawllibrary.main;
+package com.stu.lon.lib;
 
 import android.content.ComponentName;
 import android.content.Context;
@@ -19,8 +19,6 @@ import java.util.concurrent.LinkedBlockingQueue;
  * <p>
  * 采用绑定ad service和夸进程通信的方式
  *
- * @author libo
- * @date 2020-02-20
  */
 class AdvertisingIdProvider {
     public static final class AdInfo {
